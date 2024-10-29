@@ -44,7 +44,7 @@ for i_subject in subject_label:
 
     # Save the REMs dataFrame in a tsv file
     rems_detection_df = rem.summary().round(3)
-    rems_detection_df.to_csv(f"C:/Users/klacourse/Documents/NGosselin/data/edf/RBD/10_first_subjects/{i_subject}_YASA_REMs_summary.tsv", sep='\t')
+    rems_detection_df.to_csv(f"{data_path}{i_subject}_YASA_REMs_summary.tsv", sep='\t')
     # Modify the DataFrame to be compatible with Snooz
     #   Snooz dataframe : [group, name, start_sec, duration_sec, channels]
     #   Define 
@@ -61,4 +61,4 @@ for i_subject in subject_label:
         'channels': [channels_label] * len(rems_detection_df)
     })
     # Save the REMs dataFrame in a tsv file
-    snooz_rem.to_csv(f"C:/Users/klacourse/Documents/NGosselin/data/edf/RBD/10_first_subjects/{i_subject}_YASA_REMs_snooz.tsv", sep='\t', index=False)
+    snooz_rem.to_csv(f"{data_path}{i_subject}_YASA_REMs_snooz.tsv", sep='\t', index=False)
